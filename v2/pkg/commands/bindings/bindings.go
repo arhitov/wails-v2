@@ -56,9 +56,10 @@ func GenerateBindings(options Options) (string, error) {
 	envBuild := os.Environ()
 	envBuild = shell.SetEnv(envBuild, "GOOS", runtime.GOOS)
 	envBuild = shell.SetEnv(envBuild, "GOARCH", runtime.GOARCH)
+	envBuild = shell.SetEnv(envBuild, "CC", "x86_64-linux-gnu-gcc")
 	// wailsbindings is executed on the build machine.
 	// So, use the default C compiler, not the one set for cross compiling.
-	envBuild = shell.RemoveEnv(envBuild, "CC")
+	//envBuild = shell.RemoveEnv(envBuild, "CC")
 
 	stdout, stderr, err = shell.RunCommandWithEnv(envBuild, workingDirectory, options.Compiler, "build", "-buildvcs=false", "-tags", tagString, "-o", filename)
 	if err != nil {
