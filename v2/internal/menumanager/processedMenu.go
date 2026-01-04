@@ -3,8 +3,8 @@ package menumanager
 import (
 	"encoding/json"
 
-	"github.com/wailsapp/wails/v2/pkg/menu"
-	"github.com/wailsapp/wails/v2/pkg/menu/keys"
+	"github.com/arhitov/wails-v2/v2/pkg/menu"
+	"github.com/arhitov/wails-v2/v2/pkg/menu/keys"
 )
 
 type ProcessedMenuItem struct {

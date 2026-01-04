@@ -5,9 +5,9 @@ import (
 	"os"
 	"strings"
 
+	"github.com/arhitov/wails-v2/v2/internal/s"
 	"github.com/leaanthony/debme"
 	"github.com/leaanthony/gosod"
-	"github.com/wailsapp/wails/v2/internal/s"
 )
 
 //go:embed assets/common/*

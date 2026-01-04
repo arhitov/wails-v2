@@ -86,7 +86,7 @@ import "C"
 import (
 	"unsafe"
 
-	"github.com/wailsapp/wails/v2/internal/frontend"
+	"github.com/arhitov/wails-v2/v2/internal/frontend"
 )
 
 func GetAllScreens(wailsContext unsafe.Pointer) ([]frontend.Screen, error) {
