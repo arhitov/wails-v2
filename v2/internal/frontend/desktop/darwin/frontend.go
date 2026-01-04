@@ -26,15 +26,15 @@ import (
 	"os"
 	"unsafe"
 
-	"github.com/wailsapp/wails/v2/pkg/assetserver"
-	"github.com/wailsapp/wails/v2/pkg/assetserver/webview"
+	"github.com/arhitov/wails-v2/v2/pkg/assetserver"
+	"github.com/arhitov/wails-v2/v2/pkg/assetserver/webview"
 
-	"github.com/wailsapp/wails/v2/internal/binding"
-	"github.com/wailsapp/wails/v2/internal/frontend"
-	"github.com/wailsapp/wails/v2/internal/frontend/originvalidator"
-	"github.com/wailsapp/wails/v2/internal/frontend/runtime"
-	"github.com/wailsapp/wails/v2/internal/logger"
-	"github.com/wailsapp/wails/v2/pkg/options"
+	"github.com/arhitov/wails-v2/v2/internal/binding"
+	"github.com/arhitov/wails-v2/v2/internal/frontend"
+	"github.com/arhitov/wails-v2/v2/internal/frontend/originvalidator"
+	"github.com/arhitov/wails-v2/v2/internal/frontend/runtime"
+	"github.com/arhitov/wails-v2/v2/internal/logger"
+	"github.com/arhitov/wails-v2/v2/pkg/options"
 )
 
 const startURL = "wails://wails/"

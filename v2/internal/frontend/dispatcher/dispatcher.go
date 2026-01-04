@@ -3,11 +3,11 @@ package dispatcher
 import (
 	"context"
 	"fmt"
+	"github.com/arhitov/wails-v2/v2/internal/binding"
+	"github.com/arhitov/wails-v2/v2/internal/frontend"
+	"github.com/arhitov/wails-v2/v2/internal/logger"
+	"github.com/arhitov/wails-v2/v2/pkg/options"
 	"github.com/pkg/errors"
-	"github.com/wailsapp/wails/v2/internal/binding"
-	"github.com/wailsapp/wails/v2/internal/frontend"
-	"github.com/wailsapp/wails/v2/internal/logger"
-	"github.com/wailsapp/wails/v2/pkg/options"
 )
 
 type Dispatcher struct {

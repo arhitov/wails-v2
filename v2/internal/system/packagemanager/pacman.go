@@ -8,7 +8,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/wailsapp/wails/v2/internal/shell"
+	"github.com/arhitov/wails-v2/v2/internal/shell"
 )
 
 // Pacman represents the Pacman package manager

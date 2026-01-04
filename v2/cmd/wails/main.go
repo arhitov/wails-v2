@@ -5,10 +5,10 @@ import (
 	"os"
 	"strings"
 
+	"github.com/arhitov/wails-v2/v2/cmd/wails/internal"
 	"github.com/pterm/pterm"
-	"github.com/wailsapp/wails/v2/cmd/wails/internal"
 
-	"github.com/wailsapp/wails/v2/internal/colour"
+	"github.com/arhitov/wails-v2/v2/internal/colour"
 
 	"github.com/leaanthony/clir"
 )

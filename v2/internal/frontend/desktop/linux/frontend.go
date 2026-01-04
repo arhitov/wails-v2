@@ -32,7 +32,7 @@ static void fix_signal(int signum)
 fix_signal_error:
         fprintf(stderr, "error fixing handler for signal %d, please "
                 "report this issue to "
-                "https://github.com/wailsapp/wails: %s\n",
+                "https://github.com/arhitov/wails-v2: %s\n",
                 signum, strerror(errno));
 }
 
@@ -90,15 +90,15 @@ import (
 	"text/template"
 	"unsafe"
 
-	"github.com/wailsapp/wails/v2/pkg/assetserver"
-	"github.com/wailsapp/wails/v2/pkg/assetserver/webview"
+	"github.com/arhitov/wails-v2/v2/pkg/assetserver"
+	"github.com/arhitov/wails-v2/v2/pkg/assetserver/webview"
 
-	"github.com/wailsapp/wails/v2/internal/binding"
-	"github.com/wailsapp/wails/v2/internal/frontend"
-	"github.com/wailsapp/wails/v2/internal/frontend/originvalidator"
-	wailsruntime "github.com/wailsapp/wails/v2/internal/frontend/runtime"
-	"github.com/wailsapp/wails/v2/internal/logger"
-	"github.com/wailsapp/wails/v2/pkg/options"
+	"github.com/arhitov/wails-v2/v2/internal/binding"
+	"github.com/arhitov/wails-v2/v2/internal/frontend"
+	"github.com/arhitov/wails-v2/v2/internal/frontend/originvalidator"
+	wailsruntime "github.com/arhitov/wails-v2/v2/internal/frontend/runtime"
+	"github.com/arhitov/wails-v2/v2/internal/logger"
+	"github.com/arhitov/wails-v2/v2/pkg/options"
 )
 
 var initOnce = sync.Once{}

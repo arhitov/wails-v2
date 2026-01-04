@@ -7,13 +7,13 @@ import (
 	"os"
 	"path/filepath"
 
+	"github.com/arhitov/wails-v2/v2/internal/binding"
+	"github.com/arhitov/wails-v2/v2/internal/frontend/runtime/wrapper"
+	"github.com/arhitov/wails-v2/v2/internal/fs"
+	"github.com/arhitov/wails-v2/v2/internal/logger"
+	"github.com/arhitov/wails-v2/v2/internal/project"
+	"github.com/arhitov/wails-v2/v2/pkg/options"
 	"github.com/leaanthony/gosod"
-	"github.com/wailsapp/wails/v2/internal/binding"
-	"github.com/wailsapp/wails/v2/internal/frontend/runtime/wrapper"
-	"github.com/wailsapp/wails/v2/internal/fs"
-	"github.com/wailsapp/wails/v2/internal/logger"
-	"github.com/wailsapp/wails/v2/internal/project"
-	"github.com/wailsapp/wails/v2/pkg/options"
 )
 
 func (a *App) Run() error {
