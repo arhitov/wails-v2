@@ -2,7 +2,7 @@ module dragdrop-test
 
 go 1.23
 
-require github.com/arhitov/wails-v2/v2 v2.10.1
+require github.com/arhitov/wails-v2 v2.12.1
 
 require (
 	github.com/bep/debounce v1.2.1 // indirect

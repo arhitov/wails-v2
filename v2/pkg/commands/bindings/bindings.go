@@ -25,6 +25,43 @@ type Options struct {
 	TsOutputType     string
 }
 
+func getCrossCompiler(targetGOOS, targetGOARCH string) string {
+	// Проверяем явно заданный CC из окружения
+	if cc := os.Getenv("CC"); cc != "" {
+		return cc
+	}
+
+	// Автоматический подбор на основе целевой платформы
+	switch targetGOOS {
+	case "windows":
+		switch targetGOARCH {
+		case "amd64":
+			return "x86_64-w64-mingw32-gcc"
+		case "386":
+			return "i686-w64-mingw32-gcc"
+		case "arm64":
+			return "aarch64-w64-mingw32-gcc"
+		}
+	case "linux":
+		switch targetGOARCH {
+		case "amd64":
+			return "x86_64-linux-gnu-gcc"
+		case "386":
+			return "i686-linux-gnu-gcc"
+		case "arm":
+			return "arm-linux-gnueabihf-gcc"
+		case "arm64":
+			return "aarch64-linux-gnu-gcc"
+		}
+	case "darwin":
+		// Для macOS нужен специальный компилятор
+		return "o64-clang" // или путь к Xcode toolchain
+	}
+
+	// Если не нашли специфичный - возвращаем gcc
+	return "gcc"
+}
+
 // GenerateBindings generates bindings for the Wails project in the given ProjectDirectory.
 // If no project directory is given then the current working directory is used.
 func GenerateBindings(options Options) (string, error) {
@@ -56,7 +93,11 @@ func GenerateBindings(options Options) (string, error) {
 	envBuild := os.Environ()
 	envBuild = shell.SetEnv(envBuild, "GOOS", runtime.GOOS)
 	envBuild = shell.SetEnv(envBuild, "GOARCH", runtime.GOARCH)
-	envBuild = shell.SetEnv(envBuild, "CC", "x86_64-linux-gnu-gcc")
+
+	// Автоматически определяем CC для кросс-компиляции
+	cc := getCrossCompiler(runtime.GOOS, runtime.GOARCH)
+	envBuild = shell.SetEnv(envBuild, "CC", cc)
+
 	// wailsbindings is executed on the build machine.
 	// So, use the default C compiler, not the one set for cross compiling.
 	//envBuild = shell.RemoveEnv(envBuild, "CC")
